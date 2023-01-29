@@ -1,19 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link :to="{ name: 'about' }">About</router-link>
-    <router-link :to="{ name: 'jobs' }">Jobs</router-link>
-  </nav>
+  <Header @tog="toggleSide"></Header>
+  <Sidebar :class="open" />
   <router-view />
-
-  <button @click="redirect">Redirect to Home Page</button>
-  <button @click="back">Go back</button>
-  <button @click="forward">Go forward</button>
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import Sidebar from './components/Sidebar.vue'
 export default {
+  data() {
+    return {
+      open: ''
+    }
+  },
+  components: {
+    Header,
+    Sidebar
+  },
   methods: {
+    // redirect buttons
     redirect() {
       this.$router.push({ name: 'home' })
     },
@@ -23,6 +28,15 @@ export default {
     forward() {
       this.$router.go(1)
     },
+    // 
+    // sidebar toggler function
+    toggleSide() {
+      if (this.open == '') {
+        this.open = 'open'
+      } else {
+        this.open = ''
+      }
+    }
   }
 }
 </script>
@@ -35,7 +49,7 @@ export default {
 }
 
 body {
-  background: #ced4da;
+  background: #101010;
 }
 
 #app {
@@ -46,33 +60,18 @@ body {
   color: #2c3e50;
 }
 
-nav {
-  padding: 1.5rem;
-  background: #212529;
-  box-shadow: 0 2px 10px 0 rgb(0, 0, 0, .4);
+.container {
+  flex-direction: column;
+  padding: 5rem .5rem .5rem 5rem;
+  color: #adb5bd;
+  transition: padding 200ms ease-in-out;
 }
 
-nav a {
-  font-weight: bold;
-  color: #dee2e6;
-  text-decoration: none;
-  margin: .5rem;
-  padding: .5rem;
-  border-radius: 5px;
-}
-
-nav a.router-link-exact-active {
-  color: #f8f8f8;
-  background-color: #457b9d;
-}
-
-button {
-  padding: .5rem;
-  border: none;
-  border-radius: 5px;
-  background: #00754a;
-  color: #dee2e6;
-  cursor: pointer;
-  margin: .1rem;
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 48
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h1>Jobs</h1>
-        <div v-for="job in jobs" :key="job.id">
-            <router-link :to="{ name: 'jobsDetails', params: { id: job.id } }">
-                <h2>{{ job.title }}</h2>
+    <div class="container">
+        <h1 class="heading">Posts</h1>
+        <div v-for="post in posts" :key="post.id">
+            <router-link :to="{ name: 'jobsDetails', params: { id: post.id } }">
+                <div class="post">{{ post.body }}</div>
             </router-link>
         </div>
     </div>
@@ -13,17 +13,36 @@
 export default {
     data() {
         return {
-            jobs: [
-                { title: 'UX Designer', id: 1, details: 'ux designer' },
-                { title: 'UI Designer', id: 25, details: 'ui designer' },
-                { title: 'Web Designer', id: 3, details: 'web designer' }
-            ]
+            posts: []
         }
+    },
+    mounted() {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(res => res.json())
+            .then(data => this.posts = data)
+            .catch(err => console.log(err.message))
     }
 }
 
 </script>
 
-<style  scoped>
+<style scoped>
+.heading {
+    margin: 0 0 1rem 0;
+}
 
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.post {
+    padding: 1rem;
+    margin: .5rem;
+    border-radius: 5px;
+    background-color: #22223b;
+    color: #ced4da;
+    max-width: 800px;
+    box-shadow: 0px 0px 15px #000;
+}
 </style>
