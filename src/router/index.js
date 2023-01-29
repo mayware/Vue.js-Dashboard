@@ -1,20 +1,45 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
+import About from '../views/About.vue'
+import NotFound from '../views/NotFound.vue'
+import Jobs from '../views/jobs/Jobs'
+import JobDetails from '../views/jobs/JobDetails'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    component: About
+  },
+  {
+    path: '/jobs',
+    name: 'jobs',
+    component: Jobs
+  },
+  {
+    path: '/jobs/:id',
+    name: 'jobsDetails',
+    component: JobDetails
+  },
+
+  // redirect
+  // in this case '/all-jobs' allegedly an older page that used to be working 
+  {
+    path: '/all-jobs',
+    redirect: '/jobs'
+  },
+
+  // 404 redirect
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
+  },
 ]
 
 const router = createRouter({
