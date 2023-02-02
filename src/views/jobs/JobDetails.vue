@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <h1>Job details page</h1>
-        <p>The job id: {{ id }}</p>
+    <div v-if="post">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.body }}</p>
+    </div>
+    <div v-else>
+        <p>Loading page...</p>
     </div>
 </template>
 
@@ -9,8 +12,15 @@
 export default {
     data() {
         return {
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            post: null
         }
+    },
+    mounted() {
+        fetch('https://jsonplaceholder.typicode.com/posts/' + this.id)
+            .then(res => res.json())
+            .then(data => this.post = data)
+            .catch(err => console.log(err.message))
     }
 }
 

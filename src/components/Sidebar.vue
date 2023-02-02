@@ -31,10 +31,10 @@
         <div class="sidebar-bottom">
             <ul class="sidebar-list">
                 <li class="side-list-item">
-                    <a href="/settings" class="side-item">
+                    <router-link :to="{ name: 'settings' }" class="side-item">
                         <span class="material-symbols-outlined"> settings </span>
                         <span class="sidebar-link-title">Settings</span>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>
@@ -59,7 +59,7 @@ export default {
     bottom: 0;
     height: calc(100vh - 65px);
     border-right: 1px solid #343a40;
-    background-color: #212529;
+    background: #212529;
     transition: width 200ms ease-in-out;
 }
 
@@ -80,7 +80,7 @@ export default {
     justify-content: space-between;
     width: 100%;
     padding: 0 0.7rem;
-    height: 4.5rem;
+    height: 5rem;
 }
 
 .user-profile {

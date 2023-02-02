@@ -1,7 +1,9 @@
 <template>
   <Header @tog="toggleSide"></Header>
   <Sidebar :class="open" />
-  <router-view />
+  <div class="container" :class="open">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -62,8 +64,13 @@ body {
 
 .container {
   flex-direction: column;
-  padding: 5rem .5rem .5rem 5rem;
+  padding: 4rem .7rem .5rem 4.7rem;
   color: #adb5bd;
+  transition: padding 200ms ease-in-out;
+}
+
+.container.open {
+  padding: 4rem .5rem .5rem 15.5rem;
   transition: padding 200ms ease-in-out;
 }
 
@@ -73,5 +80,49 @@ body {
     'wght' 500,
     'GRAD' 0,
     'opsz' 48
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 10px;
+}
+
+.content-top {
+  padding: 1rem;
+  background-image: url('./assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 350px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .7mm;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #343a40;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dee2e6;
+}
+
+@media(max-width: 620px) {
+  .container {
+    padding: 5rem .5rem .5rem .5rem;
+  }
 }
 </style>

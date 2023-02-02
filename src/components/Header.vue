@@ -7,7 +7,7 @@
                 </button>
             </div>
             <router-link to="/" class="home-link">
-                <div class="header-title">SPA</div>
+                <div class="header-title">Dashboard</div>
             </router-link>
             <!-- <div class="header-links">
                 <router-link to="/" class="header-link">Home</router-link>
@@ -42,7 +42,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
-    background: #0F3460;
+    background: #1b263b;
     position: fixed;
     top: 0;
     width: 100%;

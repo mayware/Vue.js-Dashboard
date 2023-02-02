@@ -1,10 +1,13 @@
 <template>
-    <div class="container">
+    <div class="content">
         <h1 class="heading">Posts</h1>
-        <div v-for="post in posts" :key="post.id">
+        <div v-for="post in posts" :key="post.id" v-if="posts.length">
             <router-link :to="{ name: 'jobsDetails', params: { id: post.id } }">
-                <div class="post">{{ post.body }}</div>
+                <div class="post">{{ post.title }}</div>
             </router-link>
+        </div>
+        <div v-else>
+            <p>Loading page...</p>
         </div>
     </div>
 </template>
