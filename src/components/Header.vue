@@ -17,9 +17,18 @@
                 </button>
                 <div class="dropdown">
                     <div class="dropdown-menu" v-if="show">
-                        <a href="#" class="dropdown-link">Account</a>
-                        <a href="#" class="dropdown-link">Settings</a>
-                        <a href="#" class="dropdown-link">Log out</a>
+                        <router-link to="/account" class="dropdown-link">
+                            Account
+                            <span class="material-symbols-outlined"> person_filled </span>
+                        </router-link>
+                        <router-link to="/settings" class="dropdown-link">
+                            Settings
+                            <span class="material-symbols-outlined"> settings </span>
+                        </router-link>
+                        <router-link to="/logout" class="dropdown-link">
+                            Log out
+                            <span class="material-symbols-outlined"> logout </span>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -102,23 +111,11 @@ export default {
     text-decoration: none;
 }
 
-.move-btn {
-    padding: .5rem;
-    border: none;
-    border-radius: 5px;
-    background: #00754a;
-    color: #dee2e6;
-    cursor: pointer;
-    margin: .1rem;
-    transition: 200ms ease-in-out;
-}
-
 .dropdown-menu {
     position: absolute;
     top: 50px;
     right: 25px;
     display: flex;
-    align-items: center;
     flex-direction: column;
     background: #202020;
     border: 1px solid #343434;
@@ -127,12 +124,12 @@ export default {
 }
 
 .dropdown-link {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-decoration: none;
     color: #adb5bd;
     padding: .5rem;
-    height: 100%;
-    width: 100%;
 }
 
 .dropdown-link:hover {
