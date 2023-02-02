@@ -64,7 +64,7 @@ body {
 
 .container {
   flex-direction: column;
-  padding: 4rem .7rem .5rem 4.7rem;
+  padding: 4rem .7rem .5rem 4.8rem;
   color: #adb5bd;
   transition: padding 200ms ease-in-out;
 }
@@ -74,6 +74,13 @@ body {
   transition: padding 200ms ease-in-out;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 10px;
+  justify-items: center;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
@@ -81,28 +88,6 @@ body {
     'GRAD' 0,
     'opsz' 48
 }
-
-.content {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  row-gap: 10px;
-}
-
-.content-top {
-  padding: 1rem;
-  background-image: url('./assets/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 350px;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: .7mm;
-}
-
-
-
-
 
 ::-webkit-scrollbar {
   width: 10px;

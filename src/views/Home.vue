@@ -47,6 +47,7 @@
         </router-link>
       </div>
     </div>
+    <div class="section-intro">Future projects</div>
   </div>
 </template>
 
@@ -65,9 +66,23 @@ export default {
   justify-content: center;
   padding: 1rem;
   height: 150px;
+  width: 100%;
   font-size: 24px;
   font-weight: 700;
   background-color: #191919;
+}
+
+.content-top {
+  padding: 1rem;
+  background-image: url('../assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 350px;
+  width: 100%;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .7mm;
 }
 
 .content-main {

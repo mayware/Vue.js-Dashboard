@@ -9,29 +9,47 @@
             <router-link to="/" class="home-link">
                 <div class="header-title">Dashboard</div>
             </router-link>
-            <!-- <div class="header-links">
-                <router-link to="/" class="header-link">Home</router-link>
-                <router-link :to="{ name: 'about' }" class="header-link">About</router-link>
-                <router-link :to="{ name: 'jobs' }" class="header-link">Jobs</router-link>
-            </div> -->
-
         </div>
         <div class="header-right">
             <div class="login-section">
-                <button class="login-btn">
+                <button class="login-btn" @click="dropdownToggler">
                     <span class="material-symbols-outlined">person_filled</span>
                 </button>
+                <div class="dropdown">
+                    <div class="dropdown-menu" v-if="show">
+                        <a href="#" class="dropdown-link">Account</a>
+                        <a href="#" class="dropdown-link">Settings</a>
+                        <a href="#" class="dropdown-link">Log out</a>
+                    </div>
+                </div>
             </div>
-            <!-- <button class="move-btn" @click="redirect">Redirect to Home Page</button>
-            <button class="move-btn" @click="back">Go back</button>
-            <button class="move-btn" @click="forward">Go forward</button> -->
         </div>
-
     </header>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            show: false
+        }
+    },
+    methods: {
+        dropdownToggler() {
+            this.show = !this.show
+        },
+        close(e) {
+            if (!this.$el.querySelector('.login-btn').contains(e.target)) {
+                this.show = false
+            }
+        },
+    },
+    mounted() {
+        document.addEventListener('click', this.close)
+    },
+    beforeDestroy() {
+        document.removeEventListener('click', this.close)
+    }
 }
 
 </script>
@@ -84,7 +102,6 @@ export default {
     text-decoration: none;
 }
 
-
 .move-btn {
     padding: .5rem;
     border: none;
@@ -94,5 +111,31 @@ export default {
     cursor: pointer;
     margin: .1rem;
     transition: 200ms ease-in-out;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #202020;
+    border: 1px solid #343434;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.dropdown-link {
+    text-align: center;
+    text-decoration: none;
+    color: #adb5bd;
+    padding: .5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.dropdown-link:hover {
+    background: #343434;
 }
 </style>
