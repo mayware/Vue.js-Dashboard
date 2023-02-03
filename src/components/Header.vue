@@ -69,12 +69,12 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
-    background: #1b263b;
+    background: #0A2647;
     position: fixed;
     top: 0;
     width: 100%;
     height: 65px;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0 .6rem;
     box-shadow: 0 2px 10px 0 rgb(0, 0, 0, .4);
 }
 
@@ -85,14 +85,22 @@ export default {
 
 .sidebar-btn,
 .login-btn {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     background: none;
     border: none;
+    border-radius: 50%;
+    padding: .7rem;
     color: #dee2e6;
     transition: 200ms ease-in-out;
 }
 
-.sidebar-btn:hover,
+.sidebar-btn:hover {
+    color: #adb5bd;
+    transition: 200ms ease-in-out;
+}
+
 .login-btn:hover,
 .header-title:hover {
     color: #adb5bd;

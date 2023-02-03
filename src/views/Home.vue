@@ -1,6 +1,8 @@
 <template>
   <div class="content">
-    <div class="content-top">Welcome</div>
+    <div class="content-top">
+      <span class="welcome-title">Welcome</span>
+    </div>
     <div class="section-intro">Entertainment</div>
     <div class="content-main">
       <div class="ent-block">
@@ -72,17 +74,9 @@ export default {
   background-color: #191919;
 }
 
-.content-top {
-  padding: 1rem;
-  background-image: url('../assets/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 350px;
-  width: 100%;
-  font-size: 28px;
+.welcome-title {
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: .7mm;
 }
 
 .content-main {
