@@ -78,7 +78,7 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 10px;
-  justify-items: center;
+  /* justify-items: center; */
 }
 
 .content-top {

@@ -26,6 +26,11 @@
                         <span class="material-symbols-outlined"> mail </span>
                         <span class="sidebar-link-title">Posts</span></router-link>
                 </li>
+                <li class="side-list-item">
+                    <router-link :to="{ name: 'todo' }" class="side-item">
+                        <span class="material-symbols-outlined"> task_alt </span>
+                        <span class="sidebar-link-title">Todo app</span></router-link>
+                </li>
             </ul>
         </div>
         <div class="sidebar-bottom">
