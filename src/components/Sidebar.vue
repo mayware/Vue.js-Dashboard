@@ -60,9 +60,9 @@ export default {
     width: 65px;
     position: fixed;
     left: 0;
-    top: 65px;
+    top: 55px;
     bottom: 0;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 55px);
     border-right: 1px solid #343a40;
     background: #212529;
     transition: width 200ms ease-in-out;

@@ -64,13 +64,13 @@ body {
 
 .container {
   flex-direction: column;
-  padding: 4.5rem .7rem .5rem 4.8rem;
+  padding: 4rem .7rem .5rem 4.8rem;
   color: #adb5bd;
   transition: padding 200ms ease-in-out;
 }
 
 .container.open {
-  padding: 4.5rem .5rem .5rem 15.5rem;
+  padding-left: 15.5rem;
   transition: padding 200ms ease-in-out;
 }
 
@@ -79,22 +79,6 @@ body {
   grid-template-columns: repeat(1, 1fr);
   row-gap: 10px;
   /* justify-items: center; */
-}
-
-.content-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  background-image: url('./assets/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 575px;
-  width: 100%;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: .7mm;
 }
 
 .material-symbols-outlined {

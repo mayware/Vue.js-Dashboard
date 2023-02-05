@@ -73,7 +73,7 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 65px;
+    height: 55px;
     padding: 0 1.5rem 0 .6rem;
     box-shadow: 0 2px 10px 0 rgb(0, 0, 0, .4);
 }
@@ -111,7 +111,7 @@ export default {
     color: #dee2e6;
     font-size: 24px;
     font-weight: 700;
-    margin: 1rem;
+    margin: .5rem;
     transition: 200ms ease-in-out;
 }
 

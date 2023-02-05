@@ -55,6 +55,7 @@ export default {
         },
         removeTodo(index) {
             this.todos.splice(index, 1)
+            this.tasks--
         }
     }
 }

@@ -1,7 +1,11 @@
 <template>
   <div class="content">
-    <div class="content-top">
-      <span class="welcome-title">Welcome</span>
+    <div class="dashboard">
+      <div class="dash-block"></div>
+      <div class="dash-block"></div>
+      <div class="dash-block"></div>
+      <div class="dash-block"></div>
+      <div class="dash-block"></div>
     </div>
     <div class="section-intro">Entertainment</div>
     <div class="content-main">
@@ -62,6 +66,26 @@ export default {
 </script>
 
 <style>
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .7mm;
+}
+
+.dash-block {
+  padding: 1rem;
+  height: 275px;
+  border: 1px solid #343434;
+}
+
+.dash-block:nth-child(5) {
+  grid-column: 2/4;
+}
+
 .section-intro {
   display: flex;
   align-items: center;
